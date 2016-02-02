@@ -8,28 +8,9 @@
 *.AppleDouble
 *.AppleDB
 *.AppleDesktop
-Temporary Items
-.apdisk
-GPATH
-GRTAGS
-GTAGS
 
 # OS
 .DS_Store
 
-# vagrant stuff
-.vagrant
-
-# profiling
-/profiler
-
-npm-debug.log
-Bundles/*/tests/_output
-Bundles/*/tests/_support/_generated
-
-# PHP CS Fixer
-Bundles/.php_cs.cache
-Bundles/.php_cs
-Bundles/*/.php_cs.cache
-Bundles/*/.php_cs
-
+/tests/_output/*
+!/tests/_output/.gitkeep

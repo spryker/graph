@@ -1,29 +1,6 @@
 {
-  "name": "spryker/spryker",
-  "require":{
-    "phpdocumentor/graphviz": "~1.0.0"
-  },
+  "name": "spryker/graph",
   "require-dev": {
-    "knplabs/github-api": "1.4.7",
-    "silex/web-profiler": "~1.0.2",
-    "pdepend/pdepend": "*",
-    "phpunit/phpunit": "~3.7.0",
-    "codeception/codeception": "*",
-    "fzaninotto/faker": "1.4.*",
-    "codeception/remote-debug": "*"
-  },
-  "minimum-stability": "stable",
-  "prefer-stable": true,
-  "config": {
-    "use-include-path": true
-  },
-  "autoload": {
-    "files": ["Autoload/autoload.php"],
-    "psr-0": {
-      "Spryker\\Shared\\Library": "Bundles/Library/src/"
-    }
-  },
-  "bin": [
-    "Bundles/Console/bin/console"
-  ]
+    "codeception/codeception": "~2.1.0"
+  }
 }

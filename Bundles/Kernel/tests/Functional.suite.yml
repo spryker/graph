@@ -1,5 +1,0 @@
-class_name: FunctionalTester
-modules:
-    enabled:
-        - Filesystem
-        - \Kernel\Module\Functional
