@@ -1,2 +1,0 @@
-# Zed Package
-
