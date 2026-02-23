@@ -77,7 +77,6 @@ class GraphPluginTest extends Unit
     public function testInit(): void
     {
         $graphMock = $this->getMockBuilder(GraphInterface::class)
-            ->addMethods(['create'])
             ->onlyMethods(['addNode', 'addEdge', 'addCluster', 'render'])->getMock();
         $graphMock->method('render')->willReturn('');
 
@@ -160,7 +159,6 @@ class GraphPluginTest extends Unit
     protected function getPluginMock(): GraphPlugin
     {
         $graphMock = $this->getMockBuilder(GraphInterface::class)
-            ->addMethods(['create'])
             ->onlyMethods(['addNode', 'addEdge', 'addCluster', 'render'])->getMock();
         $graphMock->method('render')->willReturn('');
 
