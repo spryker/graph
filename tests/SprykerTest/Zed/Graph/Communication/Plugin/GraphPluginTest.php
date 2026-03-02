@@ -56,9 +56,6 @@ class GraphPluginTest extends Unit
      */
     public const ATTRIBUTES = ['attribute' => 'value', 'html attribute' => '<h1>Html Value</h1>'];
 
-    /**
-     * @return void
-     */
     public function testGetGraphMustThrowExceptionIfGraphWasNotInitialized(): void
     {
         // Arrange
@@ -71,9 +68,6 @@ class GraphPluginTest extends Unit
         $graphPlugin->addNode(static::NODE_A);
     }
 
-    /**
-     * @return void
-     */
     public function testInit(): void
     {
         $graphMock = $this->getMockBuilder(GraphInterface::class)
@@ -89,65 +83,41 @@ class GraphPluginTest extends Unit
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->init(static::GRAPH_NAME));
     }
 
-    /**
-     * @return void
-     */
     public function testAddNode(): void
     {
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->addNode(static::NODE_A));
     }
 
-    /**
-     * @return void
-     */
     public function testAddNodeWithAttributes(): void
     {
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->addNode(static::NODE_A, static::ATTRIBUTES));
     }
 
-    /**
-     * @return void
-     */
     public function testAddNodeWithGroup(): void
     {
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->addNode(static::NODE_A, [], static::GROUP_NAME));
     }
 
-    /**
-     * @return void
-     */
     public function testAddEdge(): void
     {
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->addEdge(static::NODE_A, static::NODE_B));
     }
 
-    /**
-     * @return void
-     */
     public function testAddEdgeWithAttributes(): void
     {
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->addEdge(static::NODE_A, static::NODE_B, static::ATTRIBUTES));
     }
 
-    /**
-     * @return void
-     */
     public function testAddCluster(): void
     {
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->addCluster(static::CLUSTER_NAME));
     }
 
-    /**
-     * @return void
-     */
     public function testAddClusterWithAttributes(): void
     {
         $this->assertInstanceOf(GraphPlugin::class, $this->getPluginMock()->addCluster(static::CLUSTER_NAME, static::ATTRIBUTES));
     }
 
-    /**
-     * @return void
-     */
     public function testRender(): void
     {
         $this->assertIsString($this->getPluginMock()->render('svg'));

@@ -52,65 +52,41 @@ class PhpDocumentorGraphAdapterTest extends Unit
      */
     public const ATTRIBUTES = ['label' => 'label value'];
 
-    /**
-     * @return void
-     */
     public function testCreate(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getAdapter()->create(static::GRAPH_NAME));
     }
 
-    /**
-     * @return void
-     */
     public function testCreateWithAttributes(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getAdapter()->create(static::GRAPH_NAME, static::ATTRIBUTES));
     }
 
-    /**
-     * @return void
-     */
     public function testCreateUnDirectedGraph(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getAdapter()->create(static::GRAPH_NAME, [], false));
     }
 
-    /**
-     * @return void
-     */
     public function testCreateTolerantGraph(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getAdapter()->create(static::GRAPH_NAME, [], true, false));
     }
 
-    /**
-     * @return void
-     */
     public function testAddNode(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getGraph()->addNode(static::NODE_A));
     }
 
-    /**
-     * @return void
-     */
     public function testAddNodeWithAttributes(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getGraph()->addNode(static::NODE_A, static::ATTRIBUTES));
     }
 
-    /**
-     * @return void
-     */
     public function testAddNodeWithGroup(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getGraph()->addNode(static::NODE_A, [], static::GROUP_NAME));
     }
 
-    /**
-     * @return void
-     */
     public function testAddEdge(): void
     {
         $adapter = $this->getGraph();
@@ -120,9 +96,6 @@ class PhpDocumentorGraphAdapterTest extends Unit
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $adapter->addEdge(static::NODE_A, static::NODE_B));
     }
 
-    /**
-     * @return void
-     */
     public function testAddEdgeWithAttributes(): void
     {
         $adapter = $this->getGraph();
@@ -132,25 +105,16 @@ class PhpDocumentorGraphAdapterTest extends Unit
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $adapter->addEdge(static::NODE_A, static::NODE_B, static::ATTRIBUTES));
     }
 
-    /**
-     * @return void
-     */
     public function testAddCluster(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getGraph()->addCluster(static::CLUSTER_NAME));
     }
 
-    /**
-     * @return void
-     */
     public function testAddClusterWithAttributes(): void
     {
         $this->assertInstanceOf(PhpDocumentorGraphAdapter::class, $this->getGraph()->addCluster(static::CLUSTER_NAME, static::ATTRIBUTES));
     }
 
-    /**
-     * @return void
-     */
     public function testRender(): void
     {
         $adapter = new PhpDocumentorGraphAdapter();
@@ -159,9 +123,6 @@ class PhpDocumentorGraphAdapterTest extends Unit
         $this->assertIsString($adapter->render('svg'));
     }
 
-    /**
-     * @return void
-     */
     public function testRenderAttributes(): void
     {
         $adapter = new PhpDocumentorGraphAdapter();
@@ -176,9 +137,6 @@ class PhpDocumentorGraphAdapterTest extends Unit
         $this->assertStringContainsString('label="Arrow 1"', $renderingResult);
     }
 
-    /**
-     * @return void
-     */
     public function testRenderWithFileName(): void
     {
         $adapter = new PhpDocumentorGraphAdapter();
@@ -187,9 +145,6 @@ class PhpDocumentorGraphAdapterTest extends Unit
         $this->assertIsString($adapter->render('svg', sys_get_temp_dir() . '/filename'));
     }
 
-    /**
-     * @return \Spryker\Shared\Graph\Adapter\PhpDocumentorGraphAdapter
-     */
     private function getAdapter(): PhpDocumentorGraphAdapter
     {
         $adapter = new PhpDocumentorGraphAdapter();
@@ -197,9 +152,6 @@ class PhpDocumentorGraphAdapterTest extends Unit
         return $adapter;
     }
 
-    /**
-     * @return \Spryker\Shared\Graph\Adapter\PhpDocumentorGraphAdapter
-     */
     private function getGraph(): PhpDocumentorGraphAdapter
     {
         return $this->getAdapter()->create(static::GRAPH_NAME);

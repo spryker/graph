@@ -32,9 +32,6 @@ class GraphCommunicationFactoryTest extends Unit
      */
     public const GRAPH_NAME = 'graph name';
 
-    /**
-     * @return void
-     */
     public function testCreateGraphAdapterWithObjectFromConfigMustThrowException(): void
     {
         $this->expectException(GraphAdapterNameIsAnObjectException::class);
@@ -46,9 +43,6 @@ class GraphCommunicationFactoryTest extends Unit
         $factory->createGraph(static::GRAPH_NAME);
     }
 
-    /**
-     * @return void
-     */
     public function testCreateGraphAdapterWithInvalidAdapterNameFromConfigMustThrowException(): void
     {
         $this->expectException(InvalidGraphAdapterNameException::class);
@@ -60,9 +54,6 @@ class GraphCommunicationFactoryTest extends Unit
         $factory->createGraph(static::GRAPH_NAME);
     }
 
-    /**
-     * @return void
-     */
     public function testCreateGraphAdapterWithInvalidAdapterInstanceMustThrowException(): void
     {
         $this->expectException(InvalidGraphAdapterException::class);
@@ -74,9 +65,6 @@ class GraphCommunicationFactoryTest extends Unit
         $factory->createGraph(static::GRAPH_NAME);
     }
 
-    /**
-     * @return void
-     */
     public function testCreateGraph(): void
     {
         $factory = new GraphCommunicationFactory();
